@@ -150,7 +150,7 @@ This flat key-value representation is what we usually call a snapshot. To write 
 
 However, we also need to be able to efficiently summarize a state, which is done using a structure called the Merkle Patricia Trie (MPT). This is a big topic, not covered by this document. A link to an in-detail document will be added soon. The most important part of it is that it's a merkle tree and we can calculate it's root/hash to summarize a whole state. When a node proposes a block, the root of the post-state is included as metadata in the header. That means that after executing a block, we can calculate the root of the resulting post-state MPT and compare it with the metadata. If it matches, we have a cryptographic proof that both nodes arrived at the same conclusion.
 
-This means that we will need to maintain both a snapshot (for efficient reads) and a trie (for efficient summaries) for every state in the blockchain. Here's an interesting blogpost by the go ethereum (geth) team explaning this need in detail: https://blog.ethereum.org/2020/07/17/ask-about-geth-snapshot-acceleration
+This means that we will need to maintain both a snapshot (for efficient reads) and a trie (for efficient summaries) for every state in the blockchain. Here's an interesting blogpost by the go ethereum (geth) team explaining this need in detail: https://blog.ethereum.org/2020/07/17/ask-about-geth-snapshot-acceleration
 
 # TODO
 
